@@ -27,17 +27,18 @@ oci_execute($stmt);// Executa a consulta SQL no banco
         </tr>
         <?php
         // Percorre os resultados e exibe cada cliente em uma linha da tabela
-        while($row = oci_fetch_assoc($stmt)){//oci_fetch_assoc($stmt); → Retorna os resultados em um array associativo, onde cada coluna do banco vira uma chave do array.
-            echo"<tr>";
-            echo"<td>".$row['ID']."</td>";// Exibe os dados do cliente dentro da tabela.
-            echo"<td>".$row['NOME']."</td>";
-            echo"<td>".$row['EMAIL']."</td>";
-            echo"<td>".$row['TELEFONE']."</td>";
-            echo"<td>
+        while ($row = oci_fetch_assoc($stmt)) {//oci_fetch_assoc($stmt); → Retorna os resultados em um array associativo, onde cada coluna do banco vira uma chave do array.
+            echo "<tr>";
+            echo "<td>" . $row['ID'] . "</td>";// Exibe os dados do cliente dentro da tabela.
+            echo "<td>" . $row['NOME'] . "</td>";
+            echo "<td>" . $row['EMAIL'] . "</td>";
+            echo "<td>" . $row['TELEFONE'] . "</td>";
+            echo "<td>
                     <a href='editar_cliente.php?id=" . $row['ID'] . "'>Editar</a> |
-                    <a href='excluir_cliente.php?id=" . $row['ID'] . "' onclick='return confirm(\"Tem certeza?\")'>Excluir</a>
+                    <a href='excluir_cliente.php?id=" . $row['ID'] . "' onclick='return confirm(\"Tem certeza que deseja excluir este cliente?\")'>Excluir</a>
                  </td>";//Adiciona links para editar ou excluir o cliente.
-            echo"</tr>";
+                 //onclick="return confirm('Tem certeza que deseja excluir este cliente?');" Exibe uma caixa de confirmação antes de excluir o cliente. Se o usuário cancelar, a exclusão não ocorre.
+            echo "</tr>";
         }
         ?>
     </table>

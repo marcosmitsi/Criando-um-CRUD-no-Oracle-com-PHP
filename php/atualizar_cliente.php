@@ -37,11 +37,11 @@ oci_bind_by_name($stmt, ":id", $id);
 $resultado = oci_execute($stmt); //Executa a atualização.
 
 if($resultado){
-header("Location: listar_clientes.php?mensagem=atualizado");//Redireciona para a página de listagem após atualizar o cliente.
+header("Location: ../html/listar_clientes.html?mensagem=atualizado");//Redireciona para a página de listagem após atualizar o cliente.
 exit; //Garante que o código pare de executar após o redirecionamento.
 }else{
     $erro = oci_error($stmt);
-    header("Location: listar_clientes.php?mensagem=não foi possível Atualizar o Cliente !" .$erro['message']);//Redireciona para a página de listagem após atualizar o cliente.
+    header("Location: ../html/listar_clientes.html?mensagem=não foi possível Atualizar o Cliente !" .$erro['message']);//Redireciona para a página de listagem após atualizar o cliente.
 exit; //Garante que o código pare de executar após o redirecionamento.
 
 }

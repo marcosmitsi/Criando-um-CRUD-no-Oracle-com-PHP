@@ -14,7 +14,7 @@ function carregarClientes() {
                         <td>${cliente.email}</td>
                         <td>${cliente.telefone}</td>
                         <td>
-                            <a href='../php/editar_cliente.php?id=${cliente.id}'>Editar</a> |
+                            <a href='../html/editar_cliente.html?id=${cliente.id}'>Editar</a> |
                             <a href='../php/excluir_cliente.php?id=${cliente.id}' onclick='return confirm("Tem certeza que deseja excluir este cliente?")'>Excluir</a>
                         </td>
                     </tr>

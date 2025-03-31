@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../assets/css/styles.css">
+    <script src="../assets/js/carregarClientes.js"></script>
+    <title>Lista de Clientes</title>
+</head>
+
+<body>
+    <div class="container_list">
+        <h2 class="container_list_titulo">Lista de Clientes</h2>
+        <table border="1" class="container_list_tabela">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Email</th>
+                    <th>Telefone</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody id="tabela-clientes">
+                <!-- Os clientes serão carregados aqui via JavaScript -->
+            </tbody>
+        </table>
+        <br><br>
+        <a href='../php/exportar_clientes_csv.php' class='botao'>Exportar para CSV</a> |
+        <a href="../php/exportar_clientes_pdf.php" class="botao">Exportar para PDF</a>
+    </div>
+
+</body>
+
+</html>

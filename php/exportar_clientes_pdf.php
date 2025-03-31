@@ -1,6 +1,6 @@
 <?php
 include_once('connect/conexao.php');
-require_once('../fpdf/fpdf.php');
+require_once('../assets/bliblioteca/fpdf/fpdf.php');
 
 // Criar um novo PDF
 $pdf = new FPDF();
@@ -34,7 +34,8 @@ while ($row = oci_fetch_assoc($stmt)) {
     $pdf->Cell(25, 10, $row['TELEFONE'], 1);
     $pdf->Ln();
 }
-
+oci_free_statement($stmt);
+oci_close($conn);
 // Saída do PDF
 $pdf->Output('D', 'clientes.pdf');
 exit;

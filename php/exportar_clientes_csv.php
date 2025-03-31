@@ -2,9 +2,11 @@
 
 include_once "connect/conexao.php";
 
+$arquivo = "clientes_exportados.csv";
+
 // Definir cabeçalhos HTTP para download do arquivo
 header('Content-Type: text/csv; charset=UTF-8');
-header('Content-Disposition: attachment; filename="clientes.csv"');
+header('Content-Disposition: attachment; filename="'.$arquivo.'"');
 header('Pragma: no-cache');
 header('Expires: 0');
 

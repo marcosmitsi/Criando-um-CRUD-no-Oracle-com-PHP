@@ -21,23 +21,25 @@ $row = oci_fetch_assoc($stmt); //Obtém os dados do cliente em um array associat
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="../css/styles.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/styles.css">
     <title>editar Clientes</title>
 </head>
 
 <body>
-    <h2>Editar Clientes</h2>
-    <form action="atualizar_cliente.php" method="post">
-        <input type="hidden" name="id" value="<?php echo $id; ?>"> <!--/*Mantém o ID do cliente oculto no formulário.*/-->
-        <label>Nome:</label>
-        <input type="text" name="nome" value="<?php echo $row['NOME']; ?>" required><br>
-        <label>Email:</label>
-        <input type="email" name="email" value="<?php echo $row['EMAIL']; ?>" required><br>
-        <label>Telefone:</label>
-        <input type="text" name="telefone" value="<?php echo $row['TELEFONE']; ?>" required><br>
-        <input type="submit" value="Atualizar">
-    </form>
-
+    <div class="container">
+        <h2>Editar Clientes</h2>
+        <form action="atualizar_cliente.php" method="post">
+            <input type="hidden" name="id" value="<?php echo $id; ?>">
+            <!--/*Mantém o ID do cliente oculto no formulário.*/-->
+            <label>Nome:</label>
+            <input type="text" name="nome" value="<?php echo $row['NOME']; ?>" required><br>
+            <label>Email:</label>
+            <input type="email" name="email" value="<?php echo $row['EMAIL']; ?>" required><br>
+            <label>Telefone:</label>
+            <input type="text" name="telefone" value="<?php echo $row['TELEFONE']; ?>" required><br>
+            <input type="submit" value="Atualizar">
+        </form>
+    </div>
 </body>
 
 </html>

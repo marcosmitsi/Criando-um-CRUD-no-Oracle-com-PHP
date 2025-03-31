@@ -12,10 +12,22 @@ oci_execute($stmt);// Executa a consulta SQL no banco
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/styles.css">
     <title>Lista de Clientes</title>
 </head>
 
 <body>
+    <?php
+    if (isset($_GET['mensagem'])) {
+        if ($_GET['mensagem'] == "sucesso") {
+            echo "<p style='color: green;'>Cliente cadastrado com sucesso!</p>";
+        } elseif ($_GET['mensagem'] == "atualizado") {
+            echo "<p style='color: blue;'>Cliente atualizado com sucesso!</p>";
+        } elseif ($_GET['mensagem'] == "excluido") {
+            echo "<p style='color: red;'>Cliente excluído com sucesso!</p>";
+        }
+    }
+    ?>
     <h2>Lista de Clientes</h2>
     <table border="1">
         <tr>
@@ -36,13 +48,14 @@ oci_execute($stmt);// Executa a consulta SQL no banco
             echo "<td>
                     <a href='editar_cliente.php?id=" . $row['ID'] . "'>Editar</a> |
                     <a href='excluir_cliente.php?id=" . $row['ID'] . "' onclick='return confirm(\"Tem certeza que deseja excluir este cliente?\")'>Excluir</a>
+                    
                  </td>";//Adiciona links para editar ou excluir o cliente.
                  //onclick="return confirm('Tem certeza que deseja excluir este cliente?');" Exibe uma caixa de confirmação antes de excluir o cliente. Se o usuário cancelar, a exclusão não ocorre.
             echo "</tr>";
         }
         ?>
     </table>
-
+    <a href='exportar_clientes_csv.php' class= 'botao'>Exportar para CSV</a>
 </body>
 
 </html>

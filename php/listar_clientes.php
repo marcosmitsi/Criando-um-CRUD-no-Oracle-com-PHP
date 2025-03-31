@@ -55,7 +55,8 @@ oci_execute($stmt);// Executa a consulta SQL no banco
         }
         ?>
     </table>
-    <a href='exportar_clientes_csv.php' class= 'botao'>Exportar para CSV</a>
+    <br><br>
+    <a href='exportar_clientes_csv.php' class= 'botao'>Exportar para CSV</a> | <a href="exportar_clientes_pdf.php" class="botao">Exportar para PDF</a>
 </body>
 
 </html>
